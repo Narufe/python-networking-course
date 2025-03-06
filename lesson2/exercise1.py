@@ -22,5 +22,5 @@ print(f"{ip_addr}{subnet_increment} \n")
 print(f"3. The first and last host addresses in the first subnet")
 #first host in first subnet
 print(f"{ip_addr}1")
-#second host in first subnet
+#last host in first subnet
 print(f"{ip_addr}{number_of_hosts}")
