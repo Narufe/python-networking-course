@@ -1,8 +1,10 @@
 
+
+
 Note: There is a table of contents for each video located at the bottom of this email including timestamps. This should be helpful in navigating the videos.
 
 
-In this email of Learning Python we are going to cover the following:
+﻿In this email of Learning Python we are going to cover the following:
  
 Lesson2 Introduction
 Video https://vimeo.com/811030957
@@ -213,3 +215,133 @@ Python defines one integer (zero) as the False integer [5:28]
 Python defines on list (empty list) as the False list [6:10]
 Python similarly has one False value for dictionaries, sets, floats [6:37]
 None [7:20]
+None is its own special type [7:30]
+Default value return value of functions [7:35]
+None is False in a boolean context [7:53]
+ 
+Video4 - Reading from a File
+Reading from file without a context manager [0:12]
+Opening a file [0:30]
+Create a file handle and use the .read() method [1:20]
+Different ways of reading a file’s contents [2:16]
+readline() reads a line at a time [2:23]
+readlines() reads all the lines of the file into a list [2:53]
+Directly loop over the lines in a file [3:30]
+ 
+Video5 - Writing to a File
+open() and specify mode = “w” [0:15]
+write() method to write content to the file. 
+Sync file using flush() or by closing the file [0:58]
+The write operation is destructive [1:57]
+ 
+Video6 - Appending to a File
+Use open() method and specify mode = “a” [0:15]
+Adds to the end of the file, does not destroy existing file contents [0:45]
+ 
+Video7 - An Aside on Python Code Blocks
+Colon as the block terminator character [0:58]
+Indented code block will follow [1:00]
+Always use four spaces for indentation [1:17]
+End indentation to indicate end of the block [3:19]
+ 
+Video8 - File Context Managers
+Context managers are used when your pattern is open, perform an operation, and then close [0:25]
+Examples: files, database connections, APIs, connection to network devices [0:43]
+“with” keyword is the beginning of a Python Context Manager [1:20]
+with statement [1:32]
+open [1:34]
+as var [2:00]
+Perform operation on the file [2:20]
+File is automatically closed at the end of the indented block [2:32]
+Block ending also forces a flush of the file automatically [2:40]
+Why use context managers? [3:00]
+Clean up always happens [3:30]
+File will be closed gracefully once the block ends (error or no error) [4:15]
+ 
+Video9 - List Basics
+List Characteristics
+Ordered [0:23]
+Data types for the list elements can vary [0:43]
+Square bracket notation [1:08]
+Separating the elements using commas [1:16]
+Lists use zero-based indices [1:36]
+Accessing list elements [1:36]
+Assigning new values [2:00]
+Access the last element [2:30]
+ 
+Video10 - Lists: Len, Range, and Membership
+len() provides the length of a list [0:15]
+range() generates a sequence of numbers from 0 to (n-1) [0:45]
+Changing the range starting value [1:55]
+List membership check [2:30]
+ 
+Video11 - List Methods
+append() - add to end [0:25]
+clear() - removes all elements [1:08]
+count() - count the number of occurrences of element [1:25]
+copy() - shallow copy of a list [1:44]
+List concatenation [3:02]
+extend() - add new list to existing list [3:45]
+pop() - remove and return elements from a list [4:10]
+Other list methods [5:25]
+ 
+Video12 - List Slices
+What are list slices [0:10]
+First number, the starting index, is included [0:36]
+Second number, ending index, is excluded [0:51]
+Additional behavior of list slices [1:15]
+No starting index specified [1:18]
+No ending index specified [2:19]
+Colon only, neither starting nor ending index specified [2:53]
+List slices can use negative numbers [3:00]
+List slicing does not modify the existing list [3;35]
+ 
+Video13 - Multidimensional Lists
+List within lists [0:15]
+Accessing elements of multidimensional lists [0:39]
+Chaining indices [1:40]
+ 
+Video14 - Immutable Objects
+Name (variable) refers to object in memory [1:01]
+Multiple names referring to the same object [1:30]
+Using id() to see the object's identifier [2:03]
+Comparing identity of two variables [2:35]
+Immutable Objects cannot change [3:12]
+Assignment (pointing to a new object in memory) [3:57]
+Increment/decrement is a new assignment [4:37]
+Immutable object examples: None, Booleans, Strings, Integers, Floats  [5:20]
+ 
+Video15 - Mutable Objects
+Mutable objects are objects that can be modified [0:16]
+Examples: Lists, Dictionaries, Sets
+Lists can add items, but the identifier stays the same [0:35]
+Copying mutable objects [2:00]
+Two names point to the same underlying object [2:10]
+Appending string to one, modifies both lists [2:21]
+Shallow copy using ‘.copy()’ method - modifying one list doesn’t affect the other list [2:58]
+ 
+Video16 - Shallow Copy vs Deep Copy
+What is a shallow copy? [1:11]
+Shallow copy is fine if all of the elements are immutable [2:25]
+Shallow copy of lists where inner elements are mutable is (probably) not fine [3:48]
+Shallow copy example - the outermost list is unique, but pointing to same inner list [5:08]
+Modifying one (inner) list, modifies ‘both’ inner lists (really there is no both) [5:39]
+What is a deep copy? Copies all the levels of mutable data structure [6:27]
+copy.deepcopy() makes a new copy of every mutable object [6:38]
+Could be costly if our data structure is large [7:58]
+ 
+Video17 - Tuples
+Tuple - An Immutable List [0:36]
+Syntax [0:45]
+Parenthesis, not square brackets [0:45]
+Access indexes using [] notation [1:15]
+Cannot assign new values [1:42]
+Cannot append(), extend(), pop() [1:52]
+A Tuple Gotcha [2:10]
+Can accidentally create a tuple using commas [2:15]
+
+
+
+
+
+Kirk Byers
