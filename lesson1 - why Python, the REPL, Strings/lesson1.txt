@@ -1,3 +1,106 @@
+
+Note: There is a table of contents for each video located at the bottom of this email including timestamps. This should be helpful in navigating the videos.
+
+I pretty strongly recommend that you increase the playback speed of the videos. Vimeo's online video playback allows you to playback at 1.25x, 1.5x, and 2x. Additionally, the videos are downloadable and you should be able to increase the playback speed of the videos using your computer's video software.
+
+
+﻿In this lesson of Learning Python we are going to cover the following:
+ 
+Introduction / Why Python?
+Video https://vimeo.com/773953928
+Length is 3 minutes
+
+How to watch the videos (Vimeo widgets that might help)
+Video https://vimeo.com/811026150
+Length is 1 minute
+
+Python Environment - Virtual Environment Setup
+Video https://vimeo.com/775992471
+Length is 4 minutes
+
+Python Environment - PIP Dependencies
+Video https://vimeo.com/775994971
+Length is 2 minutes
+
+Python Environment - Disable IPython AutoComplete
+Video https://vimeo.com/775996916
+Length is 2 minutes
+
+REPL and Assignment
+Video https://vimeo.com/776018583
+Length is 5 minutes
+
+Python Naming Conventions
+Video https://vimeo.com/776020759
+Length is 1 minute
+
+Print and Input
+Video https://vimeo.com/776021731
+Length is 1 minute
+
+Python Characteristics​
+Video https://vimeo.com/775988907
+Length is 2 minutes
+
+Executing your first Python script
+Video https://vimeo.com/795409640
+Length is 2 minutes
+
+Comments, Dir, and Help
+Video https://vimeo.com/795413664
+Length is 4 minutes
+
+String Basics
+Video https://vimeo.com/795422456
+Length is 2 minutes
+
+String Methods
+Video https://vimeo.com/795427518
+Length is 8 minutes
+
+Chaining String Methods
+Video https://vimeo.com/795434207
+Length is 1 minute
+
+Embedding Variables in Strings
+Video https://vimeo.com/795707341
+Length is 3 minutes
+
+f-strings
+Video https://vimeo.com/795715961
+Length is 5 minutes 
+
+Other Characteristics of Strings
+Video https://vimeo.com/795725784
+Length is 7 minutes 
+
+
+
+
+Collateral Material (programs used in the videos):
+
+In collateral, we try to provide the Python scripts and related files shown in the videos. In other words, we try to make it easy for you to reproduce the examples from the videos. 
+
+Lesson1 Collateral Programs
+
+
+
+Additional Content:
+
+Google Python Course on Strings
+A good overview of many aspects of strings. It includes a discussion on string slices which I don't cover in my videos. I do cover list slices which is essentially the same thing except applied in the context of Python lists.
+
+
+How To Use f-strings to Create Strings in Python 3
+A quick tutorial on Python f-strings. Covers much of the same content as is covered in the video on f-strings.
+
+
+Automate the Boring Stuff (Chapter6 - Manipulating Strings)
+A good chapter on Python strings. I recommend stopping at the section named, "Numeric Values of Characters with the ord() and chr() Functions". The author covers some different string methods and also covers string slices.
+
+
+ 
+
 Exercises
 
 Reference code for these exercises is posted on GitHub at:
@@ -76,3 +179,122 @@ Finally, achieve a similar output except this time use the .format() method:
 
 format() method
 10.12.17.1 --> 0024.c4e9.48ae​
+
+
+
+
+CLASS OUTLINE
+
+ 
+Introduction / Why Python?
+Lesson1: Table of contents [0:15]
+About me [0:25]
+Why Python? [0:54]
+ 
+How to watch the videos (Vimeo widgets that might help)​
+Playback speed [0:08]
+Closed Caption [0:27]
+Video Download [0:50]
+ 
+Python Environment - Virtual Environment Setup​
+My Environment [0:16]
+Download Current Version of Python [0:42]
+Making a Virtual Environment [1:28]
+Virtual Environment Explained [2:02]
+Benefits of Sandbox [2:10]
+Activate Virtual Environment [2:55]
+Virtual Environment in Windows [3:20]
+ 
+Python Environment - PIP Dependencies​
+pip list [0:18]
+Upgrade PIP [0:59]
+Install Course Dependencies [1:14]
+ 
+Python Environment - Disable IPython AutoComplete ​
+How to disable IPython AutoComplete [0:27]
+Make ipython_config.py file [0:50]
+Disabling IPython AutoComplete in Windows [1:00]
+ 
+REPL and Assignment 
+​Interpreter Shell [0:20]
+Assignments and variable names [1:00]
+Variable names [1:34]
+Linters and variable names [3:00]
+Dunder-methods [3:23]
+Single leading underscore - Private [4:01]
+Double leading underscores [4:44]
+ 
+Python Naming Conventions 
+​snake_case_lower [0:05]
+PascalCase [0:20]
+SNAKE_CASE_UPPER [0:43]
+self [1:00]
+Single underscore [1:03]
+ 
+Print and Input
+​Print to standard output [0:05]
+Reading from standard input [0:22]
+ 
+Python Characteristics 
+Indentation [0:11]
+Spaces not tabs [0:36]
+PEP8 style guides [1:17]
+ 
+ Executing your first Python script 
+​Creating a script [0:09]
+Executing a script [0:35]
+Executing a script more directly (“shebang” on Mac/Linux) [0:45]
+Executing a script on Windows [1:51]
+Python Launcher for Windows [2:17]
+ 
+Comments, Dir, and Help
+​Comments in code [0:05]
+Using triple quotes for comments [0:35]
+dir()  [1:37]
+help() [3:09]
+ 
+String Basics
+​Creating Strings [0:35]
+Multiline string - triple quotes [1:07]
+Error when starting and ending quotes don’t match [1:46]
+ 
+String Methods (Video13)
+Calling the method - trailing parentheses [0:12]
+Saving the new string into variable [1:50]
+.split() method - default is whitespace [2:10]
+.split() method - based on separator character(s) [3:25]
+.join() method - character inserted between list elements [4:05]
+.strip() method - remove leading and trailing whitespace [6:00]
+.lstrip() and .rstrip() methods - left strip and right strip [6:42]
+.splitlines() methods - split based on new lines [7:04]
+ 
+ Chaining String Methods (Video14)
+Chain string methods [0:10]
+Add another string method to previous string [0:40]
+Does not change the original string, would need to assign to a variable [1:10]
+ 
+Embedding Variables in Strings
+Percent operator: %s  [0:21]
+format() method [1:44]
+f-strings [2:25]
+ 
+ f-strings
+f-strings - expressions inside curly braces [0:15]
+f-strings for formatting columns [0:55]
+f-strings for formatting floats [2:30]
+f-string tricks [2:55]
+f-string rules/conflicts [4:05]
+ 
+Other Characteristics of Strings
+String Membership [0:06]
+Raw Strings [0:47]
+String Concatenation [2:12]
+String Increment: += operator [2:56]
+Strings are “sequences” [4:28]
+
+
+
+
+
+Kirk Byers
+https://pynet.twb-tech.com
