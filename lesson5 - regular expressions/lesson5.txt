@@ -1,0 +1,221 @@
+
+
+Note: There is a table of contents for each video located at the bottom of this email including timestamps. This should be helpful in navigating the videos.
+
+﻿In this email of Learning Python we are going to cover the following:
+ 
+Regular Expression Introduction
+Video link https://vimeo.com/832769533
+Length is 3 minutes
+ 
+Special Characters
+Video link https://vimeo.com/830294637
+Length is 5 minutes
+ 
+(Somewhat) Simple Examples
+Video link https://vimeo.com/830644262
+Length is 7 minutes
+ 
+Additional Examples
+Video link https://vimeo.com/830428490
+Length is 10 minutes
+ 
+Capture Groups and Raw Strings
+Video link https://vimeo.com/830646534
+Length is 5 minutes
+ 
+Anchors and re.MULTILINE
+Video link https://vimeo.com/830685707
+Length is 3 minutes
+ 
+re.findall()
+Video link https://vimeo.com/830690686
+Length is 5 minutes
+ 
+Match logic
+Video link https://vimeo.com/832457474
+Length is 1 minute
+ 
+re.DOTALL
+Video link https://vimeo.com/832460190
+Length is 2 minutes
+ 
+re.escape()
+Video link  https://vimeo.com/832488661
+Length is 3 minutes
+ 
+Named Capture Groups (*optional/intermediate content)
+Video link https://vimeo.com/832490540
+Length is 2 minutes
+ 
+regex101.com
+Video link  https://vimeo.com/832496547
+Length is 5 minutes
+
+*Optional/intermediate content - this content is more intermediate and can be safely skipped. In other words, feel free to skip this content if you are time limited or are struggling with the more fundamental content.
+
+
+
+
+Collateral Material (programs used in the videos):
+
+In collateral, we try to provide the Python scripts and related files shown in the videos. In other words, we try to make it easy for you to reproduce the examples from the videos. 
+
+Lesson5 Collateral Program
+
+
+
+
+Additional Content:
+
+Regular Expression HOWTO
+Python.org documentation on regular expressions. This document is very good in covering the fundamental details of Python regular expressions. I recommend reading through the section named, "Non-capturing and Named Groups".
+
+Google for Education: Python Regular Expressions
+Good, practical content on how to use regular expressions in Python. Makes the important distinction that the leftmost match will win.
+
+
+
+
+Exercises
+
+Reference code for these exercises is posted on GitHub at:
+    https://github.com/twin-bridges/learning_python/tree/main/lesson5/exercises
+
+
+1. Using this show_version.txt file from a Cisco IOS-XE router, extract both the serial number and the model number. You should use regular expressions to accomplish this. These items are contained on the following lines (both the model number and serial number are underlined).
+cisco C1111-4P (1RU) processor with 1401823K/6147K bytes of memory.
+Processor board ID FGL222290LB
+
+2. Using this show_ip_bgp_neighbors.txt file (from a Cisco IOS router), parse the BGP information and extract the following items: bgp_neighbor_ip, remote_as, bgp_version, remote_router_id, and bgp_state. This information is in the first three lines of the BGP neighbor output:
+​BGP neighbor is 10.220.88.38,  remote AS 44, external link
+  BGP version 4, remote router ID 10.220.88.38
+  BGP state = Established, up for 11w0d
+Use regular expressions and optionally named capture groups to accomplish this.
+
+Print these five fields out to standard output.
+
+
+3. Using this arista_show_ip_arp.txt file from an arista vEOS switch, parse the ARP table and extract both the IP address and the corresponding MAC address.
+
+You should use re.findall() to accomplish this. You should create a dictionary as your final data structure with the IP address as the key and the MAC address as the corresponding value.
+
+Note that you can directly cast a list of two-value tuples into a dictionary: the first element in the tuple will become the key, the second element will become the corresponding value:
+In [1]: my_list = [
+   ...:   ("key1", "value1"),
+   ...:   ("key2", "value2")
+   ...: ]
+
+In [2]: dict(my_list)
+Out[2]: {'key1': 'value1', 'key2': 'value2'}
+
+4. Inside this show_lldp.txt file, there are four LLDP entries (corresponding to "show lldp neighbors detail" output from an NX-OS switch). Each of these four entries starts with a "Chassis id:" line and ends with a "Vlan ID:" line.
+
+Use regular expressions to extract the four sections and to save these sections into a list.
+
+Note, this problem is challenging and you might need to use re.DOTALL to accomplish it.
+
+Once you have saved the four separate LLDP entries into a list, you should then use re.search() to parse the remote_system_name, remote_port and the local_port. These entries are contained in the "System Name", "Port id" and "Local Port id:" lines, respectively.
+
+Print out  the local_port and then the remote_system_name and remote_port that is reachable via that local_port.
+
+
+5. Using this aruba_cx_show_ipv6_intf.txt file, extract the intf_name, the intf_state, the admin_state, and the ipv6_addr using regular expressions.
+
+Print these values to standard output. These values show up in the first four lines of the output and are underlined below:
+Interface 1/1/1 is up
+Admin state is up
+IPv6 address:
+   2001:0db8:85a3:0000:0000:8a2e:0370:7334/24 [VALID]​
+
+  
+
+CLASS OUTLINE
+Regular Expression Introduction
+The Simple Case (literal characters) [0:55]
+ 
+RegEx Special Characters
+Regular Expressions: Simple Characters [0:10]
+By default, regular expressions will be greedy. So .* will match as many characters as it can. [1:10]
+Anchors - by default anchors are the beginning or end of the entire string. [3:00]
+ 
+(Somewhat) Simple Examples
+Import re library [0:30]
+re.search .search() - The main method we will use regular expressions to “search” for patterns in some string [re.search(pattern, string, flag=0) [0:43]
+Example ‘re.search(“.”, line)’ [1:18]
+Example ‘re.search(“..”, line)’ [1:23]
+Example ‘m=re.search(“.*”, line)’ star is greedy  [2:01]
+Example ‘m=re.search(“.*?”, line)’ match as few characters as possible [2:30]
+Example ‘m=re.search(“.+?”, line)’ zero or more characters [3:01]
+Example ‘m=re.search(“Cisco\s.*Fuji”, line)’ [3:49]
+Example ‘m=re.search(“Cisco\s+Fuji”, alt_line)’ [5:14]
+Example ‘m=re.search(“\S+\s+Fuji”, alt_line)’ [6:09]
+Example ‘m=re.search(“\w+\s+Fuji”, alt_line)’ [6:33]
+ 
+Additional Examples
+Example ‘m=re.search(“^Cisco.*\d+”, line)’ caret anchor and digits [0:15]
+Example ‘m=re.search(“^Cisco.*\d\d”, line)’ caret anchor and two digits [2:13]
+Example m=‘re.search(“^Cisco.*\d\d\.\d\.\d”, line)’ two digits, literal period, one digit, literal period, and one digit [2:48]
+Example ‘m=re.search(“^Cisco.*(\d\d\.\d\.\d)”, line)’ parentheses to capture things [4:17]
+Example ‘m=re.search(“^Cisco.*(\d\d\.\d\.\d).*$”, line)’ end line achor [4:42]
+Example ‘m=re.search(“^Cisco.*[\d\.]”, line)’ constructing your own character class with digits and periods [6:11]
+Example ‘re.search(“^Cisco.*[\d\.]”, line)’ constructing your own character class with digits and periods [6:11]
+Example ‘m=re.search(“^Cisco.*[\d\.]+”, line)’ constructing your own character class with digits and periods, with repeat [6:42]
+Example ‘m=re.search(“^Cisco.*[\d\.]+, REL”, line)’ not saved/error / no parentheses [7:14]
+Example ‘m=re.search(“^Cisco.*([\d\.]+), REL”, line)’ with parentheses [8:25]
+Example ‘m=re.search(“^Cisco.*ion ([\d\.]+), REL”, line)’ desired result of version number [9:27]
+ 
+Capture Groups and Raw Strings
+Special Character Examples [0:15]
+Example m = ‘re.search(r“Configuration register is (.*)”, data) [1:00]
+Raw string [1:26]
+In general, we want the general expression special characters and not the Python special characters. “r” turns off Python special characters meaning [2:21]
+Example: m = re.search(“Versions (.*)”, line), captures all characters [3:02]
+Example: m = re.search(“Versions (.*),”, line) Add the comma to stop the capturing [3:23]
+Example: m = re.search(“Versions (.*?),”, line) Question mark makes the wild card be non-greedy [4:22]
+ 
+Anchors and re.MULTILINE
+Using Anchors “^” beginning and “$” by default will match the entire string [0:27]
+In Python, we can change to line by line behavior with flags [1:55]
+Example: m = re.search(“^Config.*2102$”, data, flags=re.MULTILINE) - line by line basis [2:10]
+“re.MULTILINE” can also abbreviated as “re.M” [2:53]
+ 
+re.findall()
+Extracting patterns that repeat [0:17]
+Example: pattern = “Internet\s+(\d+\.\d+\.\d+\.\d+)\s+” [0:53]
+Example: re.findall(pattern, data) - Find all occurrences of pattern in data and return a list [2:09]
+Example: pattern = “Internet\s+(\d+\.\d+\.\d+\.\d+)\s+[-\d]+\s+(\w+\.\w+\.\w+)\s+” Expanding on pattern, IP and MAC Address [2:27]
+Returns a list of tuples [4:18]
+Making things more readable with f-strings [4:45]
+ 
+Match logic
+You can use the Match object to differentiate between successful and failed searches [0:17]
+The Match object will be None on a failed search [0:53]
+ 
+re.DOTALL
+By default the dot “.” special character does not include newlines [0:25]
+We can change the behavior to include newlines by adding the “flags=re.DOTALL” (or abbreviated “re.D”) argument [1:15]
+ 
+Re.escape
+What if we have characters from a networking device or from user-input and we want to search on those [0:19]
+Many times we just want the literal pattern with no special regular expressions meaning [2:10]
+re.escape will automatically escape any special characters [2:24]
+ 
+Named Capture Groups
+We can name our capture groups 
+Example: (?P<confred>\S+) [0:42]
+m.groupdict() can return a dictionary of the named capture group [1:58]
+m.group() can call .group() method and provide the group name [2:05]
+ 
+Regex101.com
+Using regex101.com - login and select Python on left navigation [0:23]
+Window: Regular Expression and Test String [0:55]
+Quick Reference (bottom right) [1:00]
+Example: copied and pasted a bit of show version into Test String window [1:59]
+Set “Regex Flags” using drop down in Regular Expression window (can set multiline or single line) [2:28] Explanation window (upper right) [3:45]
+
+
+
+
+Kirk Byers
+https://pynet.twb-tech.com
