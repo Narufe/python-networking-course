@@ -1,0 +1,219 @@
+
+Note: There is a table of contents for each video located at the bottom of this email including timestamps. This should be helpful in navigating the videos.
+
+﻿In this email of Learning Python we are going to cover the following:
+ 
+Lesson3 Introduction
+Video https://vimeo.com/823083903
+Length is 1 minute
+ 
+Conditionals
+Video https://vimeo.com/823096706
+Length is 6 minutes
+ 
+For Loops
+Video https://vimeo.com/823176272
+Length is 9 minutes
+ 
+While Loops
+Video https://vimeo.com/823499732
+Length is 5 minutes
+​ List Comprehensions (*optional/intermediate content)
+Video https://vimeo.com/825283709
+Length is 5 minutes
+
+Generator Expressions (*optional/intermediate content)
+Video https://vimeo.com/825313173
+Length is 6 minutes
+
+* Optional/intermediate content - this content is more intermediate and can be safely skipped. In other words, feel free to skip this content if you are time limited or are struggling with the more fundamental content.
+
+
+
+
+Collateral Material (programs used in the videos):
+
+In collateral, we try to provide the Python scripts and related files shown in the videos. In other words, we try to make it easy for you to reproduce the examples from the videos. 
+
+Lesson3 Collateral Programs
+
+
+
+
+Additional Content:
+
+Conditionals
+
+Nick Parlante's Python Guide: If and Comparisons
+Notes from a Stanford Computer Science Lecturer. This section covers conditionals, comparison operators, and "truthy". The content is pretty similar to the content in my videos.
+
+
+For Loops
+
+Nick Parlante's Python Guide: For Loop
+Notes from a Stanford Computer Science Lecturer. This section is similar to the content in my videos. It does bring up the important idea that you should not modify the collection that you are looping over. It also references what happens if you loop over a null collection (for example, an empty list). In the final section, "Standard Loop Phrases", subsection 3, he uses the pattern range(len(some_list)) to obtain the list indices--a better pattern for this is to use the 'enumerate' built-in.
+
+
+While Loops
+
+Nick Parlante's Python Guide: While Loop
+Notes from a Stanford Computer Science Lecturer. He covers while loop syntax, incrementing a loop counter, accidentally creating infinite loops, and using "while True".
+
+
+Flow Control (conditionals and loops)
+
+Documentation from python.org on flow-control
+Sections 4.1 through 4.5 cover conditionals, for-loops, range, break/continue/else, and the pass statement.
+
+
+List Comprehensions
+
+Digital Ocean Article: Understanding List Comprehensions in Python3
+Good article talking about the purpose and syntax of list comprehensions. It also provides various examples including list comprehensions that use conditionals and list comprehensions that use nested for loops.
+
+
+
+
+Exercises
+
+Reference code for these exercises is posted on GitHub at:
+    https://github.com/twin-bridges/learning_python/tree/main/lesson3/exercises
+
+
+1. This exercise expands on the subnet calculations from lesson2, exercise1.
+
+Create a base address variable and set it to "192.168.254.". Prompt a user to enter a subnet prefix length that ranges between 25 to 30 (i.e. the netmask length of the subnets). Save this input as an integer.
+
+From the entered subnet prefix length, calculate the size of the subnet (the number of total IP addresses in the subnet). Once we know the subnet size, we can calculate the number of hosts allowed in the subnet (subtract off the network number and the broadcast address).
+
+Use a loop to print out all of the subnet network numbers. For example, if your prefix length is 26, then your program should print out the following:
+​Subnets:
+ Number of subnets: 4
+ Subnet Number: 192.168.254.0
+ Subnet Number: 192.168.254.64
+ Subnet Number: 192.168.254.128
+ Subnet Number: 192.168.254.192
+
+Your program should print out the following:
+The number of hosts in the subnet.
+The total number of subnets and the network number for each of the subnets
+The first and last host address in just the first subnet.
+
+2. Create a Python program that reads in the file named show_ip_int_brief.txt.
+
+Loop over the file contents (in some way) and find the address that belongs to the "10.220" network. Note, since we have not talked about regular expressions yet, you can use simple string checks for finding this address.
+
+Once you find the line containing the "10.220.x.x" address, extract both the interface name and the IP address. Save these two items to variables named "intf_name" and "ip_addr". Print these variables out to standard output.
+
+
+3. Write a Python program that stays in a while loop until a timeout expires.
+
+Your program should set the timeout to be five seconds. Additionally, you should use "time.sleep(1)" to sleep for one second inside your while loop. You will need to "import time" to be able to call time.sleep().
+
+You can create a start_time variable using "start_time=time.time()".
+
+Once you have captured the start time, then you should be able to compare the start time to the current time. This will allow you to determine whether you have exceeded the five second timeout or not.
+
+While inside of your loop, print out a message indicating the amount of time elapsed since the start time (print this out each time through the loop).
+
+Additionally, print out a message indicating that you have exited the loop and also the total elapsed time (elapsed time since the start time).
+
+
+4. Create a Python program that reads the file named show_ip_int_brief.txt. Loop over the contents of this file (in some way).
+
+From the contents of this file, find all of the interfaces that are assigned an IP address. You can assume that any IP address will start with "10.".
+
+From this, create a list of all of the assigned IP addresses. Additionally, create a list of all the interfaces containing an IP address. The order of these two lists should match. In other words, the first IP address should correspond to the first interface in the interfaces list.
+
+Print both of these lists out to standard output.
+
+
+5. Create a Python program that reads the file named junos_show_arp.txt. From this Junos ARP information, extract all of the IP address to MAC-address bindings. Convert the MAC address format from '06:1a:97:b0:c4:89' to '06-1a-97-b0-c4-89'
+
+Print all of these pairings out to standard output.
+
+
+
+
+ 
+CLASS OUTLINE
+
+ 
+
+Video1 - Lesson3 Introduction
+ 
+Video2 - Conditionals​​​
+Conditionals: Syntax [0:16]​
+Expression - evaluates boolean true or false [0:25]
+Example ‘if’, ‘in’, ‘:’, indented block executed if True [0:40]
+Conditionals: Making Choices [0:55]
+‘elif’ if previous was False, then evaluate block [1:05]
+‘else’ catchall if none of the preceding if/elif/elif were True [1:20]
+Only one block will happen [1:40]
+Comparison operators [2:05]
+== Comparison equals
+!= Not equals
+>, >= Greater than
+<, <= Less than
+Logical-ors and logical-ands [2:44]
+‘and’ items must be True
+‘or’ if at least one of the items True
+Nesting conditionals [3:54]
+Conditionals inside conditionals
+Could be multiple levels of depth [4:02]
+Idiomatic Expressions [4:27]
+Linters will prefer “is None”, “is False” as compared to using “==” [4:44]
+Linters will prefer ‘is not None’ [5:06]
+Remember “truish” [5:21]
+Python assigns false values
+Integers: False value is 0
+Strings: False value is null string
+Lists: False value is blank list
+Floats: False value is 0.0
+Everything else is true… [5:50]
+Is it the behavior you want? [6:17]
+Is the data type correct?
+ 
+Video3 - For Loops
+​Syntax “for”keyword, loop variable, in, and iterator (list/ collection of things to be looped over) [0:25]
+Iterator can be a list, strings, tuples, sets, and dictionaries [2:25]
+Looping over strings gets a single character [2:49]
+Break - Immediately Exit Loop [2:57]
+Continue - Immediately jump back to the top of the for loop [3:46]
+Nesting loops [4:23]
+Enumerate: Obtaining both the index and the item [6:00]
+Looping over an empty list [7:18]
+Pass - Python no-op [7:43]
+For Loop “else” clause [8:05]
+ 
+Video4 - While Loops
+​Syntax: “while” keyword and expression (True or False)  [0:10]
+Stays in the loop as long as expression are True [0:24]
+Infinite Loops [0:40]
+Ensure that you always exit the loop
+False statement [0:42]
+Break statement [1:17]
+while loop: many similarities to for-loops [3:10]
+while True - stay in the loop until ‘break’ happens [3:46]
+Nesting loops [4:16]
+For (think “for each) vs While (event based) [4:43]
+ 
+​Video5 - List Comprehensions
+Why do list comprehensions exist? [0:27]​
+Syntax: Square brackets, loop over iterator, what we do with the loop variable, and loop variable [1:45]
+List Comprehensions: can include a conditional [2:13]
+Ex. loop over list, only include elements that are True [2:22]
+List Comprehensions: Multiple loops [2:57]
+List Comprehensions: Multiple Loops and Conditionals [4:20]
+ 
+Video6 - Generator Expressions
+​What is a generator? Why do they even exist in Python? [0:14]
+Python stores items in memory [0:40]
+Algorithm for how to get the next number [1:50]
+Syntax: “yield”, we know current state and how to return the next value [2:15]
+Generator Expressions: A shorthand way for creating generators [3:10]
+Similar to list comprehensions except you use parentheses to enclose generator expressions [3:30]
+Can use enormous values [4:45]
+Generator Expressions: Multiple loops [5:00]
+Generator Expressions: A Gotcha (generators remember previous state - they don’t reset, initialize again in a looping construct) [5:25]
+ 
