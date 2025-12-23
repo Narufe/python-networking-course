@@ -1,0 +1,78 @@
+Exercises
+
+Reference code for these exercises is posted on GitHub at:
+
+https://github.com/twin-bridges/learning_python/tree/main/lesson1/exercises
+
+
+1. Create a variable named 'sf_gw1', assign it an IP address of 172.31.255.1/24.
+
+Prompt for a second IP address using the input() built-in, save this to a variable named 'sf_gw2'. Use f-strings to print out both IP addresses using columns that are twenty characters wide. Center your IP addresses in the columns. Additionally, include the strings "sf_gw1" and "sf_gw2" in the output. Your script output should look similar to the following:
+
+​Please input 'sf_gw2' IP address: 10.254.1.252/24
+
+       sf_gw1               sf_gw2       
+-------------------- --------------------
+  172.31.255.1/24      10.254.1.252/24  
+
+Execute your script and make sure it operates properly.
+
+
+2. Create a script that prompts for a data center location.
+
+a. Use the .upper() method to convert the data center location to all upper case. Print this variable out.
+
+b. Add extra whitespace to the end of your data center location (during the initial prompting for a data center location). Use the .strip() method to remove this extra whitespace. Use print(repr(my_var)) to view any extra whitespace before and after you remove it. In other words, 'repr(my_var)' will allow you to see any whitespace (when you print this to standard output).
+
+Chain the .upper() method and the .strip() method together such that these two operations occur on one line of code. Print this to standard output. Once again use print(repr(my_var)) so that you can see any whitespace.
+
+Your output should look similar to the following:
+
+$ python exercise2.py 
+
+Enter data center location: san francisco  
+
+Upper case:
+SAN FRANCISCO  
+
+Strip off whitespace:
+Before: 'san francisco  '
+After: 'san francisco'
+
+Method chaining:
+'SAN FRANCISCO'
+
+
+3.   Use the split() method to extract the serial number from the following string. This output line is based upon the "show version" output from a Cisco IOS-XE device.
+
+line = "Processor board ID FAL127990LA"
+Note, the split() method will divide the string base upon consecutive whitespace. Consequently, executing .split() on the above 'line' variable will return four strings. For example,
+
+# Use Python unpacking to immediately assign .split() output to four-different variables.
+var1, var2, var3, var4 = line.split()
+Alternatively, you can assign line.split() to a single variable. In this case a list will be returned.
+
+# Return a list
+words = line.split()
+serial_number would be the fourth element in the returned list so it would be words[3]. We will cover lists in lesson2.
+
+
+4. Expand on exercise3, do a membership check on the 'line' variable. This membership check should verify that "Process board ID" exists in line. Print the result of this membership check (this should return a boolean). Later on we will cover conditionals in Python and could use this membership check as a precondition to our split() operation (i.e. verify that the string we are looking for exists in the 'line' variable).
+
+
+5. Create a Python program that contains the following two variables:
+
+ip_addr = "10.12.17.1"
+mac_addr = "0024.c4e9.48ae"
+Use string concatenation to print out the following (use only string concatenation, no f-strings):
+
+​String concatenation
+10.12.17.1 --> 0024.c4e9.48ae
+Now, expand on your program to print similar output except this time use f-strings:
+
+f-strings
+10.12.17.1 --> 0024.c4e9.48ae
+Finally, achieve a similar output except this time use the .format() method:
+
+format() method
+10.12.17.1 --> 0024.c4e9.48ae​
