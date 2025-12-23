@@ -1,0 +1,293 @@
+Note: There is a table of contents for each video located at the bottom of this email including timestamps. This should be helpful in navigating the videos.
+
+﻿In this email of Learning Python we are going to cover the following:
+ 
+Sets
+Video https://vimeo.com/825321551
+Length is 6 minutes 
+ 
+Set Comprehension (*optional/intermediate content)
+Video https://vimeo.com/826279940
+Length is 3 minutes 
+ 
+Dictionary Basics
+Video https://vimeo.com/826293763
+Length is 4 minutes 
+ 
+Looping over Dictionaries
+Video https://vimeo.com/826302608
+Length is 1 minute
+ 
+Dictionary Methods
+Video https://vimeo.com/826576309
+Length is 1 minutes
+ 
+Dictionaries are Mutable
+Video https://vimeo.com/826308304
+Length is 1 minute
+ 
+Nested Dictionaries
+Video https://vimeo.com/826342870
+Length is 3 minutes
+ 
+Dictionary Comprehensions (*optional/intermediate content)
+Video https://vimeo.com/828080091
+Length is 2 minutes
+ 
+Exception Handling Basics
+Video https://vimeo.com/828097974
+Length is 5 minutes
+ 
+Handling Multiple Exception Types
+Video https://vimeo.com/828119229
+Length is 1 minute
+ 
+Capturing and Re-raising Exceptions
+Video https://vimeo.com/828120103
+Length is 2 minutes
+ 
+Broad Exception Handling
+Video https://vimeo.com/828118652
+Length is 3 minutes
+ 
+ Finally
+Video https://vimeo.com/828121927
+Length is 1 minute
+ 
+ Raising an Exception
+Video https://vimeo.com/828124550
+Length is 1 minute
+ 
+Understanding a Stack Trace
+Video https://vimeo.com/828126968
+Length is 3 minute
+
+* Optional/intermediate content - this content is more intermediate and can be safely skipped. In other words, feel free to skip this content if you are time limited or are struggling with the more fundamental content.
+
+
+
+Collateral Material (programs used in the videos):
+
+In collateral, we try to provide the Python scripts and related files shown in the videos. In other words, we try to make it easy for you to reproduce the examples from the videos. 
+
+Lesson4 Collateral Programs
+
+
+
+
+Additional Content:
+
+Sets
+
+Real Python: Sets in Python
+This article covers: set basics, standard set operations (unions, intersections, differences, symmetric differences), and some less common set operations like isdisjoint() and issubset(). Finally the article discusses various ways that you can modify sets.
+
+
+Dictionaries
+
+Real Python: Dictionaries in Python
+This article covers: dictionary creation, using keys to access the corresponding values, and various dictionary methods. The article discusses the need to use immutable data types for keys, but while technically true is generally unimportant (you will almost always use strings as the dictionary keys).
+
+
+Exceptions
+
+Python Exception Handling: Best Practices and Common Pitfalls
+You should start this article at the "What are exceptions?" section and skip the introductory content. This article covers exception syntax, handling multiple exception types, and using the "finally" clause. Note, the code in this article frequently uses an "else" clause as part of the try/except block (the "else" block would be executed if there was no exception). In practice the "else" clause is almost never used with try/except blocks (you would typically just put this code inside the "try" block or alternatively completely after the try/except block).
+
+The article also covers overly broad exceptions and swallowing exceptions. I recommend skipping the following sections: "Raising custom exceptions", "the Importance of Logging", and "Real-world Examples".
+
+
+
+
+Exercises
+
+Reference code for these exercises is posted on GitHub at:
+   https://github.com/twin-bridges/learning_python/tree/main/lesson4/exercises
+
+
+1. Using the following show_ip_int_brief.txt file (captured from a Cisco IOS-XE router), create a dictionary where the keys are the interface names and the corresponding values are the IP addresses. Skip any lines that do not contain a valid IP address.
+
+Use rich.print to print the resulting data structure to standard output.
+
+
+2. Expand on exercise1, once again you will be using the show_ip_int_brief.txt file. For this exercise, include all interfaces (i.e. both interfaces with and without an IP address). For each interface construct a dictionary where the key is the interface name and the corresponding value is another dictionary. The inner dictionary should contain the following three keys (and the associated values): "ip_addr", "line_status", "line_protocol".
+
+For example, GigabitEthernet0/0/0 should look as follows:
+​'GigabitEthernet0/0/0': {
+        'ip_addr': '10.220.88.22',
+        'line_status': 'up',
+        'line_protocol': 'up'
+    }
+Enclose all of the individual interface dictionaries in a larger dictionary.
+
+The larger dictionary will contain all of the interfaces as the keys and the corresponding inner interface dictionaries as the values (with the inner dictionaries containing the "ip_addr", "line_status", and "line_protocol" key-value pairs).
+
+Print this larger dictionary to standard output using rich.print.
+
+
+3. You have the following data-structure from a Cisco NX-OS device (note, this is a list of dictionaries):
+vlans = [
+    {
+        "vlanshowbr-vlanid": "1",
+        "vlanshowbr-vlanid-utf": "1",
+        "vlanshowbr-vlanname": "default",
+        "vlanshowbr-vlanstate": "active",
+        "vlanshowbr-shutstate": "noshutdown",
+    },
+    {
+        "vlanshowbr-vlanid": "2",
+        "vlanshowbr-vlanid-utf": "2",
+        "vlanshowbr-vlanname": "VLAN0002",
+        "vlanshowbr-vlanstate": "active",
+        "vlanshowbr-shutstate": "noshutdown",
+    },
+    {
+        "vlanshowbr-vlanid": "3",
+        "vlanshowbr-vlanid-utf": "3",
+        "vlanshowbr-vlanname": "VLAN0003",
+        "vlanshowbr-vlanstate": "active",
+        "vlanshowbr-shutstate": "noshutdown",
+    },
+    {
+        "vlanshowbr-vlanid": "4",
+        "vlanshowbr-vlanid-utf": "4",
+        "vlanshowbr-vlanname": "VLAN0004",
+        "vlanshowbr-vlanstate": "active",
+        "vlanshowbr-shutstate": "noshutdown",
+    },
+]
+Loop over this list and print out all of the VLAN IDs and their corresponding VLAN names.
+
+Note, you will need to embed the above data structure into your Python program.
+
+
+​4. Take the following Aruba CX "show vlan" output: arubacx_show_vlan.txt.
+
+From this VLAN output create a dictionary where the key is the VLAN number and the corresponding value is the list of interfaces.
+
+Note, constructing the list of interfaces will require that you separate and specify all of the individual interfaces. Additionally, some of the interfaces are currently specified using interface ranges, your program should properly this and should enumerate all of the individual interfaces.
+
+Use rich.print to print the constructed dictionary to standard output.
+
+Your output should look similar to the following:
+{
+    1: ['1/1/3', '1/1/4'],
+    2: ['1/1/1', '1/1/3', '1/1/5'],
+    3: ['1/1/2', '1/1/3', '1/1/5',
+        '1/1/6', '1/1/7', '1/1/8',
+        '1/1/9'],
+    5: ['1/1/3'],
+    10: ['1/1/3', '1/1/5'],
+    11: ['1/1/3'],
+    12: ['1/1/3', '1/1/6', 'lag1', 'lag2'],
+    13: ['1/1/3', '1/1/6'],
+    14: ['1/1/3', '1/1/6'],
+    20: ['1/1/3', '1/1/10']
+}
+
+5. Using your solution to exercise4 (or alternatively my exercise4 reference solution) convert the VLAN dictionary to use sets instead of lists (for the dictionary values). After you have converted these dictionary values to sets perform the following set operations:
+Find the interfaces that are common to VLAN1, VLAN2, and VLAN3 (i.e. interfaces that are members of all three VLANs).
+Find all of the interfaces that are associated with any VLAN.
+Find all of the interfaces that are associated with VLAN12 or VLAN13 (an interface that belongs to either VLAN or to both VLANs).
+
+
+
+
+CLASS OUTLINE
+
+Sets
+Set - An unordered collection of unique elements [0:26]
+Syntax - use curly braces and elements separated by commas [0:19]
+Duplicates will be automatically removed [1:09]
+Sets are not ordered, so there are no indices [1:18]
+Adding items to a set with ‘add’ operation [1:32]
+Use .update() to add to an existing set [1:40]
+Set are mutable [2:19]
+Remove items from set .remove(), will generate exception if item does not exist [2:30]
+Remove item with .discard(), but will not generate an exception (if it is not a member of the set) [2:42]
+Set operations [3:04]
+Union - the combined members of both sets ‘|’ [3:30]
+Intersection - members common to both sets  ‘&’ [4:04]
+Symmetric Difference - only unique members (no overlapping members) ‘^’ [4:30]
+Subtraction - direction matters ‘-’ [5:10]
+ 
+Set Comprehension (*optional/intermediate content)
+Syntax - exactly like list comprehension except using curly braces [0:10]
+Adding a conditional [1:14]
+Multiple Loops [2:00]
+Multiple Loops and Conditional [2:43]
+ 
+Dictionary Basics
+Syntax: A collection of key → value pairs and are ordered based in insertion order  [0:30]
+In other languages - hashes or hash-maps [1:01]
+Curly brackets [1:18]
+Accessing Keys - name and square brackets [1:50]
+Assigning a new value [2:05]
+Value look up using a key is very fast (O(1) in Big-O notation [2:30]
+Accessing a key that doesn’t exist - KeyError exception [3:28]
+Using the .get() method, value returned or ‘None’ if value doesn’t exist [3:44]
+Change the default return value [4:15]
+ 
+Looping over Dictionaries
+When you look over a dictionary, you get the keys [0:07]
+.values() [0:16]
+.items() - retrieves both the key and the value [0:33]
+ 
+Dictionary Methods
+Using .pop() to remove keys from the dictionary and return the corresponding value [ 0:10]
+Using “del” to remove keys [0:33]
+Combine Dictionaries using update() add all key-value pairs (replace key value pair, if necessary) [0:44]
+ 
+Dictionaries are Mutable
+Same ideas of mutable, shallow copy, deep copy apply to dictionaries [0:10]
+ 
+Nested Dictionaries [0:07]
+You can chain the keys one after the other [1:17]
+We can nest lists inside of the dictionaries or vice versa [1:30]
+When you are creating a data structure, think about what structure makes sense for YOUR DATA [2:30]
+ 
+Dictionary Comprehensions (*optional/intermediate content)
+Dynamically create dictionaries - terminate with curly braces like set comprehensions except use key: value pairs [0:13]
+Swapping the key and value (values must be unique and immutable) [1:20]
+In the case of duplicates, the last value will win [1:55]
+ 
+Exception Handling Basics
+Errors happen; how can we handle them? [0:15]
+Exception Type: Index Error [0:50]
+Clues to where error occurred [1:06]
+What if we know a certain type of error might happen and we want to gracefully handle it? [1:44]
+try & except statements [2:40]
+The lines in the try block will execute on after the other [3:38]
+The exception block can have multiple statements [4:19]
+No error, “except” block will be skipped [4:48]
+ 
+Handling Multiple Exception Types
+Multiple exception types can be handled in one block [0:07]
+Multiple exception types can be also have different handlers [0:43]
+ 
+Capturing and Reraising Exceptions
+Capture the exception as a variable [0:07]
+Do some error handling and then re-raise the exceptions [0:32]
+Can be the same exception or you can raise a different exception type [1:10]
+ 
+Broad Exception Handling
+Generic exception handling - Can handle any error - but be careful [0:18]
+Exception that doesn’t fix program, so the program state is not the state it should be[1:15]
+Hiding errors, later failure when the error happened earlier [1:34]
+ 
+Finally
+Finally clause - regardless of whether an exception happens (or not), do this. Typically cleanup operations [0:15]
+ 
+Raising an Exception
+Raise your own exceptions - an error happened and I want have my program fail (report the failure)
+Note, you can create your own exception types [0:39]
+ 
+Understanding a Stack Trace
+Stack trace example [0:24]
+Stack trace is tracking the series of calls that happens in an error [2:50]
+
+ 
+
+
+
+Kirk Byers
