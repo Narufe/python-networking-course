@@ -1,0 +1,215 @@
+
+Note: There is a table of contents for each video located at the bottom of this email including timestamps. This should be helpful in navigating the videos.
+
+
+In this email of Learning Python we are going to cover the following:
+ 
+Lesson2 Introduction
+Video https://vimeo.com/811030957
+Length is 1 minute
+
+Numbers
+Video https://vimeo.com/811121373
+Length is 4 minutes
+
+Booleans and None
+Video https://vimeo.com/812220932
+Length is 8 minutes
+
+Reading from a File
+Video https://vimeo.com/812935130
+Length is 3 minutes
+
+Writing to a File
+Video https://vimeo.com/812945099
+Length is 3 minutes
+
+Appending to a File
+Video  https://vimeo.com/812952868
+Length is 2 minutes
+
+An Aside on Python Code Blocks
+Video  https://vimeo.com/812965533
+Length is 4 minutes
+
+File Context Managers
+​Video  https://vimeo.com/812995732
+Length is 4 minutes
+
+List Basics
+Video  https://vimeo.com/813738765
+Length is 3 minutes
+
+Lists: Len, Range, and Membership
+Video  https://vimeo.com/813743875
+Length is 3 minutes
+
+List Methods
+Video  https://vimeo.com/814332794
+Length is 6 minutes
+
+List Slices
+Video  https://vimeo.com/814397463
+Length is 4 minutes
+
+Multidimensional Lists
+Video  https://vimeo.com/814402675
+Length is 3 minutes
+
+Immutable Objects (*optional/intermediate content)
+Video  https://vimeo.com/816743612
+Length is 6 minutes
+
+Mutable Objects (*optional/intermediate content)
+Video  https://vimeo.com/817014487
+Length is 3 minutes
+
+Shallow Copy vs Deep Copy (*optional/intermediate content)
+Video  https://vimeo.com/817141519
+Length is 9 minutes
+
+Tuples
+Video https://vimeo.com/823072144
+Length is 3 minutes
+
+* Optional/intermediate content - this content is more intermediate and can be safely skipped. In other words, feel free to skip this content if you are time limited or are struggling with the more fundamental content.
+
+
+
+
+Collateral Material (programs used in the videos):
+
+In collateral, we try to provide the Python scripts and related files shown in the videos. In other words, we try to make it easy for you to reproduce the examples from the videos. 
+
+Lesson2 Collateral Programs
+
+
+
+
+Additional Content:
+
+Numbers:
+
+Nick Parlante's Python Guide: Python Math
+Notes from a Stanford Computer Science Lecturer. The math section covers basic math operations. It also covers math operator precedence and integer division.
+
+
+Booleans:
+
+Nick Parlante's Python Guide: Boolean, and, or, not
+Notes from a Stanford Computer Science Lecturer. In addition to the topics that I covered, it also covers boolean operator precedence and boolean short-circuiting.
+
+Understanding Boolean Logic in Python3
+Digital Ocean article on Boolean Logic. Covers similar content as the videos. Shows parenthesis and boolean logic in more detail.
+
+
+Files:
+
+Python Docs: Reading and Writing Files
+python.org documentation on reading and writing files.
+
+
+Lists:
+
+Nick Parlante's Python Guide: Python Lists
+Notes from a Stanford Computer Science Lecturer. Covers min(), max() and the 'del' keyword. Note, you should probably skip the iterator section; there are some errors in this section. I will cover loops later in this course.
+
+How to Copy a List in Python
+Article detailing various ways to copy lists and their implications for mutable objects. Covers shallow copies and deep copies.
+
+
+
+
+Exercises
+Reference code for these exercises is posted on GitHub at:
+https://github.com/twin-bridges/learning_python/tree/main/lesson2/exercises
+
+
+1.  Create a base address variable of "192.168.254.". Prompt a user to enter a subnet prefix length from between 25 to 30 (i.e. the netmask length of the subnets). Save this input as an integer.
+
+From the entered subnet prefix length, calculate the size of the subnet (the number of total IP addresses in the subnet). Once we know the subnet size, we can calculate the number of hosts allowed in the subnet (subtract off the network number and broadcast address).
+
+Also calculate and print out the network number for the first two subnets using the base address specified above.
+
+Your program should print out the following:
+The number of hosts in the subnet.
+The network number of the first two subnets.
+Both the first and last host address in the first subnet.
+
+2. Open the "show_version.txt" file for reading (do not use a context manager here). Use the .read() method to read the entire file contents to a variable named 'data'. Print out the first line of this "show version" output to the screen. Also print out the Python data type of this 'data' variable.
+
+Close the file.
+
+Open the file a second time this time using a Python context manager. Read in the file contents using the .readlines() method and save the content to a variable named 'data'. Once again, print out the first line of this "show version" output to the screen. Also print out the Python data type of this 'data' variable.
+
+
+3. Create a list of five IP addresses. Print the initial list of addresses.
+Use the .append() method to add an IP address onto the end of the list
+Use the .extend() method to add two more IP addresses to the end of the list.
+Use list concatenation to add two more IP addresses to the end of the list.
+Print out the entire list of ip addresses. Print out the first IP address in the list. Print out the last IP address in the list.
+Using the .pop() method to remove the first IP address in the list and the last IP address in the list.
+Update the new first IP address in the list to be '2.2.2.2'. Print out the new first IP address in the list.
+
+4. Using a context manager, open the file named "show_arp.txt". Read the contents of this file in (using the f.readlines() method) and save the file contents to a variable named 'show_arp'.
+Print out the Python data type of 'show_arp' variable.
+Print out the length of the 'show_arp' variable.
+Print out the header line from the 'show_arp' variable.
+Print out both the first and the last line of the tabular data from the 'show_arp' variable.
+Split the header line into fields using the .split() method. Save this into a variable named fields. Print out this 'fields' variable.
+Print out the Python data type of this 'fields' variable.
+Print out the current number of entries in the 'fields' variable.
+Print out the first field and the last field.
+
+If you print out the fields variable you will observe that some fields are unneeded or incorrect (due to the splitting on whitespace).
+
+For example, there are fields containing 'Age' and '(min)', but that is only one column in the tabular output. Similarly, 'Hardware' and 'Addr' were split into two fields, but there is only one corresponding column in the table output.
+
+Consequently, you should delete the field containing '(min)' from the list. Similarly, you should combine the 'Hardware' and 'Addr' entries into a single field named 'Hardware_Addr'. At the end of your modifications, you should only see the following six fields in the 'fields' variable.
+['Protocol', 'Address', 'Age', 'Hardware_Addr', 'Type', 'Interface']
+Finally, print out the fields variable after you have made the above corrections.
+
+
+5. Create a variable named 'intf' using the following string (from 'show ip interface brief' on a Cisco router):
+intf = "GigabitEthernet1       10.0.2.15       YES DHCP   up                    up"
+split() this variable into fields based on white-space and save this to a variable named intf_fields.
+
+From this new 'intf_fields' variable, create variables named intf_name, intf_ip_addr, intf_status, intf_protocol and match the corresponding fields from the above output (the first two fields and the last two fields, respectively).
+
+Print out each of these four variables and their corresponding values.
+
+Create booleans indicating whether both line status and line protocol are in the 'up' state. Print these booleans to the screen.
+
+
+
+
+CLASS OUTLINE
+ 
+Video1 - Lesson2 Introduction
+ 
+Video2 - Numbers
+Integers [0:12]
+Assignment [0:15]
+Python 'int' type [0:22]
+Standard math operators ( +, -, *, / ) [0:24]
+Divisions results in a float [0:30]
+Some other Operators [0:42]
+Modulo operator [1:02]
+Raising to the power of [1:56]
+Floats [2:04]
+Rounding numbers [2:26]
+Increment and decrement [2:50]
+ 
+Video3 - Booleans and None
+True / False is its own type [0:30]
+Boolean Logic [0:50]
+and [1:00]
+or  [1:25]
+not [1:42]
+Truish - using non-booleans in a boolean context [2:52]
+Strings used in a boolean context [3:55]
+Python defines one string (the null string) as the False string [4:33]
+Python defines one integer (zero) as the False integer [5:28]
+Python defines on list (empty list) as the False list [6:10]
+Python similarly has one False value for dictionaries, sets, floats [6:37]
+None [7:20]
